@@ -1,0 +1,237 @@
+
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #ffebf0;
+  }
+
+   .container-bd {
+    width: 50%;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+  }
+  
+  .message {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  button {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ff5050;
+  }
+  
+
+  
+
+
+  .vmessage {
+    direction: rtl;
+    padding: 20px;
+    margin: 30px;
+    background-color: white;
+    position: absolute;
+    top: -70%;
+    left: 100%;
+    transform: translateY(-50%);
+}
+
+.vmain-m {
+    display: inline-block; /* Prevent it from stretching out */
+    width: 100%; /* Make sure the message doesn't go beyond the container */
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 20px; /* Use viewport width for scaling text */
+    animation: typing 4s steps(20, end) forwards, blink 0.5s step-end infinite alternate;
+  }
+  
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@media (max-width: 660px) {
+    .vmain-m {
+      font-size: 15px; /* Adjust text size for smaller screens */
+    }
+  
+    h1 {
+      font-size: 6vw;
+    }
+  
+    .message {
+      font-size: 4vw;
+    }
+  }
+  
+
+
+   #character{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+   
+   }
+
+   .head {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .body {
+    width: 4px;
+    height: 40px;
+    background-color: black;
+    margin: 0 auto;
+  }
+  
+  .arm {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    top: 35px;
+  }
+  
+  .arm.left {
+    transform: rotate(-45deg);
+    left:-14px;
+  }
+  
+  .arm.right {
+    transform: rotate(45deg);
+    right: -14px;
+  }
+  
+  .leg {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    top: 65px;
+  }
+  
+  .leg.left {
+    transform: rotate(-45deg);
+    left: -14px;
+  }
+  
+  .leg.right {
+    transform: rotate(45deg);
+    right: -14px;
+  }
+
+  #winVideo {
+    width: 60%;
+    height: 70%;
+    margin: auto;
+  }
+
+  @media (max-width: 480px) {
+    .vmain-m {
+      font-size:15px; /* Larger text on very small screens */
+    }
+  
+    h1 {
+      font-size: 8vw;
+    }
+  
+    .message {
+      font-size: 5vw;
+    }
+
+    #winVideo{
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+  }
+
+  
+  #balloonCanvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #confettiCanvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .finalMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+  }
+
+.blood {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    animation: bloodEffect 2s ease-in-out;
+}
+
+@keyframes bloodEffect {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes fall {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(100px); }
+}
